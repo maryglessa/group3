@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 - Laws and Ethics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+       
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 5px;
+            background-color: #aeccec; 
+            
+            
+        }
+
+
+
+        /* Header */
+        .header {
+            text-align: center;
+            background: linear-gradient(to right, #1e3a8a, #4073ff ,#60a5fa);
+            padding: 50px;
+            color: #fff;
+            height:130px;
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2rem;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #60a5fa;
+            margin: 10px auto 0;
+            border-radius: 3px;
+        }
+
+        /* Definitions Section */
+        #definitions {
+            margin: 20px 0;
+            padding: 30px 90px;
+            justify-items: center;
+
+        }
+
+        .definition {
+            display: flex;
+            align-items: center;
+            width: 70%;
+            margin-bottom: 20px;
+            gap: 20px;
+            border-left: 10px solid #1e3a8a;
+            border-radius: 10px;
+            /* background-color: #aeccec; */
+            background-color: #e0f2fe;
+            padding: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            
+        }
+
+        .definition img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px  rgba(0, 0, 0.3, 0.7);
+           
+        }
+
+        .definition h3 {
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .definition p {
+            font-size: 1.3rem;
+            color: black;
+            line-height: 1.6;
+            background-color: #b9cfe5;
+            
+        }
+
+        .definition2 {
+            display: flex;
+          align-items: center;
+            width: 70%;
+            margin-bottom: 20px;
+            gap: 20px;
+            border-right: 10px solid #1e3a8a;
+            border-radius: 10px;
+            /* background-color: #aeccec; */
+            background-color: #e0f2fe;
+            padding: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+           
+            
+        }
+
+        .definition2 img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px  rgba(0, 0, 0.3, 0.7);
+           
+        }
+
+        .definition2 h3 {
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+           
+        }
+
+        .definition2 p {
+            font-size: 1.3rem;
+            color: black;
+            line-height: 1.6;
+            background-color: #b9cfe5;
+            
+        }
+
+        .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #60a5fa;
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+      /* Table Section */
+      .key-differences-table {
+            width: 70%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .key-differences-table th {
+            background: #1e3a8a;
+            color: #fff;
+            text-align: left;
+            padding: 15px;
+        }
+
+        .key-differences-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.3rem;
+        }
+
+        .key-differences-table tr:hover {
+            background: #f4f7fb;
+        }
+
+
+    /* Tabs Section */
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+     
+    }
+
+    .tabs-buttons {
+      display: flex;
+      gap: 10px;
+      margin:30px 20px;
+    }
+
+    .tabs-buttons button {
+      background-color: #e0f2fe;
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tabs-buttons button.active {
+      background-color: #1e3a8a;
+      color: #fff;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: center;
+      background-color: #e0f2fe;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b9cfe5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 10px; /* Add spacing between elements */
+}
+
+.tab-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-item h4 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.tab-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+        .footer {
+            background: linear-gradient(to right, #1e3a8a, #4073ff ,#60a5fa);
+            padding: 20px;
+        }
+
+         
+        .group{
+            color: white;
+            display: flex;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+                 .header h1 {
+                    font-size: 1.5rem ;
+                 }
+                
+                .definition, .definition2 {
+                    flex-direction: column;
+                    text-align: center;
+                    width: 100%;
+                    padding: 10px 80px;
+                }
+
+                .key-differences-table td {
+         
+            font-size: .8rem;
+        }
+
+             
+
+                .tabs-buttons button {
+                   padding: 6px 12px;
+                   font-size: 0.8rem;
+              }
+
+              .tab-item h4 {
+                  font-size: 1rem;
+              }
+
+              .tab-item p {
+                  font-size: 0.8rem;
+              }
+
+
+
+
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Laws and Ethics   <br> Information Security</h1>
+                <h6 class="group">Group-3</h6>
+            </header>
+
+            <!-- Definitions Section -->
+            <section id="definitions" class="container-width">
+                <h2 class="section-title">Definitions</h2>
+                <div class="definition">
+                    <img src="law.jpeg" alt="Law">
+                    <div>
+                        <h3>Law</h3>
+                        <p>It refers to the body of legal rules, codes, and standards that govern the protection of information and information systems from unauthorized access, use, disclosure, disruption, modification, or destruction. It encompasses a wide range of legal principles, including, Privacy laws, Data protection laws, Cybersecurity laws, Intellectual property laws, and Contract law.</p>
+                    </div>
+                </div>
+                <div class="definition2">
+                    <div>
+                        <h3>Ethics</h3>
+                        <p>It refers to the moral principles that guide the behavior of individuals and organizations in the field of information technology. It involves making choices about right and wrong, good and bad, in the context of information security.</p>
+                    </div>
+                    <img src="ethics.jpg" alt="Ethics">
+                </div>
+            </section>
+
+            
+            <section id="key-differences" class="container-width">
+              <h2 class="section-title">Key Differences</h2>
+              <table class="key-differences-table">
+                  <thead>
+                      <tr>
+                          <th>Aspect</th>
+                          <th>Law</th>
+                          <th>Ethics</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>Laws are formal, enforceable mandates from governing bodies, such as penalties for data breaches under the Cybercrime Prevention Act.</td>
+                      <td>Ethics are informal moral principles influenced by societal values and culture, guiding behavior beyond legal compliance. For instance, ethically, an IT professional might disclose vulnerabilities responsibly, even without legal obligation.</td>
+                  </tr>
+                      <tr>
+                          <td><strong>AUTHORITY</strong></td>
+                          <td>Laws are imposed by a governing body</td>
+                          <td>ethics are shaped by societal values and personal morality.</td>
+                      </tr>
+                      <tr>
+                          <td><strong>SUNCTIONS</strong></td>
+                          <td>Violating laws results in legal penalties</td>
+                          <td>violating ethical norms may lead to social disapproval or loss of professional reputation</td>
+                      </tr>
+                     
+                  </tbody>
+              </table>
+          </section>
+
+            <section>
+              <h2 class="section-title">Example</h2>
+              <div class="tabs">
+                  <div class="tabs-buttons">
+                      <button class="tab-btn active" data-tab="law">Law</button>
+                      <button class="tab-btn" data-tab="ethics">Ethics</button>
+                  </div>
+                  <div class="tab-content active" id="law">
+                      <div class="tab-grid">
+                          <div class="tab-item">
+                              <h4>General Data Protection Regulation (GDPR)</h4>
+                              <img src="gdpr.jpeg" alt="GDPR Example" class="img">
+                              <p>A regulation in the European Union designed to protect individuals' personal data and privacy, requiring organizations to handle data transparently, securely, and responsibly.</p>
+                          </div>
+                          <div class="tab-item">
+                              <h4>Health Insurance Portability and Accountability Act (HIPAA)</h4>
+                              <img src="hipaa.jpeg" alt="HIPAA Example" class="img">
+                              <p>A U.S. law that ensures the privacy and security of healthcare information, setting standards for handling protected health information (PHI).</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tab-content" id="ethics">
+                      <div class="tab-grid">
+                          <div class="tab-item">
+                              <h4>Privacy (Data Minimization)</h4>
+                              <img src="ethics1.jpeg" alt="Privacy Example" class="img">
+                              <p>Ensures that only the necessary amount of personal data is collected and processed, reducing the risk of misuse and overreach.</p>
+                          </div>
+                          <div class="tab-item">
+                              <h4>Security (Confidentiality)</h4>
+                              <img src="ethics2.jpeg" alt="Security Example" class="img">
+                              <p>Focuses on protecting sensitive information from unauthorized access, ensuring that data remains private and secure.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          
+          
+            
+              
+
+            <footer class="footer">
+
+            </footer>
+            
+        </main>
+    </div>
+</body>
+<script>
+        
+
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+           // Remove active classes
+           tabButtons.forEach(btn => btn.classList.remove('active'));
+           tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to the clicked button and corresponding content
+        button.classList.add('active');
+        const targetTab = button.getAttribute('data-tab');
+        document.getElementById(targetTab).classList.add('active');
+      });
+    });
+
+</script>
+</html>
